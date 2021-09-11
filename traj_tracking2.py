@@ -46,7 +46,7 @@ rospy.init_node('tracking_path')
 pub_point = rospy.Publisher('realpoints_marker', Marker, queue_size=1)
 print "Publisher created...."
 
-rospy.Subscriber("/odometry/filtered",Odometry, callback)
+rospy.Subscriber("/zed2/odom",Odometry, callback)
 print "Subcriber created...."
 rospy.spin()
 #!/usr/bin/env python
