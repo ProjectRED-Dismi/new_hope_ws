@@ -64,7 +64,7 @@ rospy.spin()
 #     path.poses.append(pose)
 #     path_pub.publish(path)
 # rospy.init_node('path_node')
-# odom_sub = rospy.Subscriber('/odom_filtered', Odometry, odom_cb)
+# odom_sub = rospy.Subscriber('/zed2/odom', Odometry, odom_cb)
 # path_pub = rospy.Publisher('/path', Path, queue_size=10)
 # if __name__ == '__main__':
 #     rospy.spin()
