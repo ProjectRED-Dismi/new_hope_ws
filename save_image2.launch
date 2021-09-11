@@ -1,0 +1,20 @@
+
+<launch>
+
+    <arg name="sender"      default="erc.unimore@gmail.com" />
+    <arg name="receiver"      default="erc.unimore@gmail.com" />
+    <arg name="password"      default="ERCrovere19" />
+    <!-- <arg name="path"      default="/catkin_ws/src/ERC_2021_simulator/commands/scripts/aruco.csv" /> -->
+
+
+        <node pkg="image_view" type="image_saver" name="image_saver">
+            <remap from="image"                   to="/zed2/left/image_rect_color"/>
+            <param name="save_all_image"    type="bool" value="false"/>
+            <!-- <param name="filename_format"    type="string" value="/home/mattia/projectred_ws/leo_final_ws2/src/image_view/images/left%04i.%s"/> -->
+            <param name="filename_format"    type="string" value="/$(find image_view)/scripts/left%04i.%s"/>
+            <!-- <param name="filename_format"    type="string" value="left%04i.%s"/> -->
+        </node>
+
+        <node pkg="navigation" type="cli_foto3.py" name="cli_foto" output="screen"> </node>
+
+</launch>
